@@ -1,4 +1,6 @@
 FirstApp::Application.routes.draw do
+  resources :products
+
   resources :microposts
 
   resources :users
