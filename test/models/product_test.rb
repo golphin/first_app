@@ -28,12 +28,10 @@ class ProductTest < ActiveSupport::TestCase
    
     product.price = 0
     assert product.invalid?
-    #assert_equal ["must be greater than or equal to 0.01"],
-    #    product.errors[:price]
+    assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
    
-   product.price = 1
-   assert product.valid?
-  
+    product.price = 1
+    assert product.valid?
   
   end
   
@@ -58,6 +56,19 @@ class ProductTest < ActiveSupport::TestCase
                    product.errors[:title]
     
   end
+  
+  test "product must be at mininum 10 characters" do
+    product = Product.new(title: products(:ruby).title,
+                         description: "yyy", price: 1, image_url: "fred.gif")
+
+    product.title = "12345678901"
+    assert product.valid? , "product title shouldn't be invalid" 
+
+    product.title = product.title.first(9)
+    assert product.invalid?  ,"product title shouldn't be invalid" 
+
+   end
+   
   
   
 end

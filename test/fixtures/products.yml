@@ -8,3 +8,19 @@ ruby:
        delivered fast, you should add Ruby to your toolbox.
   image_url: ruby.png
   price: 9.99
+
+one:
+   title: Como ficar rico
+   description: 
+         Ruby is the fastest growing and most exciting dynamic
+         language out there.  If you need to get working programs
+         delivered fast, you should add Ruby to your toolbox.
+   image_url: rico.png
+   price: 9.99
+   
+two:
+     title: Como ficar sem trabalhar
+     description: 
+            como ficar rico sem trabalhar.
+     image_url: rico.png
+     price: 9.99   
